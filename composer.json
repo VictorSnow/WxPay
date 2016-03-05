@@ -10,7 +10,7 @@
     "require": {},
     "autoload":{
     	"psr-0":{
-    		"WxPay": "src/"
+    		"WxPay_": "src/"
     	}
     }
 }
