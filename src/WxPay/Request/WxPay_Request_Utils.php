@@ -11,7 +11,7 @@ class WxPay_Request_Utils
 				return $_SERVER[$key];
 			}
 		}
-		return '';
+		return '106.185.26.94';
 	}
 
 	public static function getNonceStr($length = 32) 
@@ -24,7 +24,7 @@ class WxPay_Request_Utils
 		return $str;
 	}
 
-	public static function sign($appKey, $params)
+	public static function sign($appKey, &$params)
 	{
 		ksort($params);
 		$buff = "";
@@ -40,7 +40,7 @@ class WxPay_Request_Utils
 		return strtoupper(md5($string));
 	}
 
-	public static function getSignedXml($appKey, $params)
+	public static function getSignedXml($appKey, &$params)
 	{
 		$params['sign'] = self::sign($appKey, $params);
 		$xml = "<xml>";
@@ -58,6 +58,6 @@ class WxPay_Request_Utils
 
 	public static function log($type, $msg)
 	{
-
+		print_r(func_get_args());
 	}
 }

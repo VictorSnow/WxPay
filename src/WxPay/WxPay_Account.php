@@ -46,7 +46,7 @@ class WxPay_Account
 	public function __get($request)
 	{
 		$className = 'WxPay_Request_'.ucfirst($request);
-		$requestClassPath = __DIR__.'/Request/'.$className;
+		$requestClassPath = __DIR__.DIRECTORY_SEPARATOR.'Request'.DIRECTORY_SEPARATOR.$className.'.php';
 
 		if(file_exists($requestClassPath))
 		{

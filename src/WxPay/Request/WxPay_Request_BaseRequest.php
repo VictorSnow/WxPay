@@ -21,6 +21,10 @@ abstract class WxPay_Request_BaseRequest
 		$this->account = $account;
 	}
 
+	/**
+	 * @param $params
+	 * @return bool | array
+	 */
 	public function request($params)
 	{
 		$this->params = $params;
@@ -71,7 +75,7 @@ abstract class WxPay_Request_BaseRequest
 
 	protected function xmlCurl()
 	{
-		$xml = WxPay_Request_Utils::getSignedXml($this->account->appId, $this->params);
+		$xml = WxPay_Request_Utils::getSignedXml($this->account->appKey, $this->params);
 		$response = $this->curl($this->url, $xml);
 		$params = json_decode(json_encode(simplexml_load_string($response, 'SimpleXMLElement', LIBXML_NOCDATA)), true);
 		if(!is_array($params))

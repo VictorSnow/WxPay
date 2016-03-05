@@ -51,7 +51,7 @@ class WxPay_Request_UnifiedOrder extends WxPay_Request_BaseRequest
 			throw new \Exception('商户系统内部的订单号需要小于32个字符');
 		}
 
-		if($this->params['trade_type'] == WXPAY_TYPE_JSAPI && !isset($this->params['opend']))
+		if($this->params['trade_type'] == WXPAY_TYPE_JSAPI && !isset($this->params['openid']))
 		{
 			throw new \Exception('JSAPI模式下需要openid参数');
 		}
