@@ -1,0 +1,11 @@
+{
+    "name": "xulei/wx-pay",
+    "description": "微信支付",
+    "authors": [
+        {
+            "name": "victor",
+            "email": "534436673@qq.com"
+        }
+    ],
+    "require": {}
+}
