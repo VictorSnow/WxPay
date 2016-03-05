@@ -7,5 +7,10 @@
             "email": "534436673@qq.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload":{
+    	"psr-0":{
+    		"WxPay": "src/"
+    	}
+    }
 }
