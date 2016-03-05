@@ -1,7 +1,7 @@
 <?php
 
-include_once __DIR__.'/Request/WxPay_Request_Utils.php';
-include_once __DIR__.'/Request/WxPay_Request_BaseRequest.php';
+include_once __DIR__.'/Request/Utils.php';
+include_once __DIR__.'/Request/BaseRequest.php';
 
 defined('WXPAY_DEBUG')  or define('WXPAY_DEBUG', false);
 defined('WXPAY_TIMEOUT') or  define('WXPAY_TIMEOUT', 30);
@@ -45,8 +45,9 @@ class WxPay_Account
 	 */
 	public function __get($request)
 	{
-		$className = 'WxPay_Request_'.ucfirst($request);
-		$requestClassPath = __DIR__.DIRECTORY_SEPARATOR.'Request'.DIRECTORY_SEPARATOR.$className.'.php';
+		$request = ucfirst($request);
+		$requestClassPath = __DIR__.DIRECTORY_SEPARATOR.'Request'.DIRECTORY_SEPARATOR.$request.'.php';
+		$className = 'WxPay_Request_'.$request;
 
 		if(file_exists($requestClassPath))
 		{

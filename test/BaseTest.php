@@ -2,7 +2,7 @@
 
 define('WXPAY_DEBUG', true);
 
-include __DIR__.'/../src/WxPay/WxPay_Account.php';
+include __DIR__.'/../src/WxPay/Account.php';
 
 class BaseTest extends PHPUnit_Framework_TestCase
 {
