@@ -19,7 +19,7 @@ class WxPay_Request_UnifiedOrder extends WxPay_Request_BaseRequest
 			'appId' => $this->account->appId
 		);
 		$sign = WxPay_Request_Utils::sign($this->account->appKey, $params);
-		$params['sign'] = $sign;
+		$params['paySign'] = $sign;
 		return $params;
 	}
 
